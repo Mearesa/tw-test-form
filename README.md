@@ -2,74 +2,35 @@
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Setup
+## Процесс развертывания приложения 
 
-Make sure to install dependencies:
+### Настройка сервера:
+- Установка Node.js
+- Установка PM2 (менеджер процессов)
 
-```bash
-# npm
-npm install
+### Перенос файлов на сервер:
 
-# pnpm
-pnpm install
+### Настройка окружения
 
-# yarn
-yarn install
+### Установка зависимостей
+npm install --production
 
-# bun
-bun install
-```
+### Настройка переменных окружения
 
-## Development Server
+### Запуск приложения
 
-Start the development server on `http://localhost:3000`:
+### Настройка Nginx (если нужно)
 
-```bash
-# npm
-npm run dev
+### SSL-сертификат 
 
-# pnpm
-pnpm dev
+### Автоматизация деплоя
+- Настройка CI/CD
+- Создание deploy скрипта
 
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Реализованные функции
+- авторизации пользователя
+- разлогин пользователя
+- запрос на данные таблицы
+- фильтрация данных таблицы
+- функции работы с фильтрами
+- функции работы с названиями продуктов
