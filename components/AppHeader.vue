@@ -6,7 +6,9 @@ const { isAuthenticated } = storeToRefs(useUserStore()); // make authenticated s
 const router = useRouter();
 
 const logout = () => {
-  userStore.logoutUser()
+  userStore.logoutUser().then(async () => {
+    await router.push("/login");
+  })
 };
 </script>
 

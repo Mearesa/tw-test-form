@@ -27,12 +27,11 @@ export const useUserStore = defineStore('user', {
                 })
                 .finally(() => this.isLoading = false)
         },
-        logoutUser() {
+        async logoutUser() {
             const cookie_user = useCookie('user');
             this.isAuthenticated = false;
             this.user = {}
             cookie_user.value = null;
-            router.push('/login');
         },
 
 
