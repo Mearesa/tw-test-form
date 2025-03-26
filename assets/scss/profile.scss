@@ -1,0 +1,88 @@
+
+.products-table-container {
+  width: calc(2 / 3* 100%);;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+.filters {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+
+  .date-filters {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .name-filters {
+    margin-bottom: 1.5rem;
+  }
+
+  .name-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .name-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .clear-filters {
+    padding: .8rem 1rem;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #c0392b;
+    }
+  }
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+
+  tr {
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+}
+
+.loading,
+.no-data {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}

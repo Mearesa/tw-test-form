@@ -15,7 +15,6 @@ export class AuthService {
                 );
                 if (user){
                     resolve(user);
-
                 }else{
                     const err = new Error('Неверный логин или пароль')
                     reject(err)

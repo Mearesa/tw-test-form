@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "status": "active",
+    "date_created": "2025-03-01",
+    "name": "Laptop",
+    "count": 15,
+    "price":  200000,
+    "category": "electronic"
+  },
+  {
+    "id": 2,
+    "status": "inactive",
+    "date_created": "2025-03-02",
+    "name": "Smartphone",
+    "count": 25,
+    "price":  20000,
+    "category": "electronic"
+  },
+  {
+    "id": 3,
+    "status": "active",
+    "date_created": "2025-03-03",
+    "name": "Tablet",
+    "count": 10,
+    "price":  10000,
+    "category": "electronic"
+  },
+  {
+    "id": 4,
+    "status": "active",
+    "date_created": "2025-03-01",
+    "name": "Headphones",
+    "count": 30,
+    "price":  5000,
+    "category": "electronic"
+  },
+  {
+    "id": 5,
+    "status": "inactive",
+    "date_created": "2025-03-04",
+    "name": "Mouse",
+    "count": 45,
+    "price":  3000,
+    "category": "electronic"
+  },
+  {
+    "id": 6,
+    "status": "active",
+    "date_created": "2025-03-02",
+    "name": "Keyboard",
+    "count": 20,
+    "price":  4000,
+    "category": "electronic"
+  },
+  {
+    "id": 7,
+    "status": "active",
+    "date_created": "2025-03-03",
+    "name": "Monitor",
+    "count": 12,
+    "price":  50000,
+    "category": "electronic"
+  },
+  {
+    "id": 8,
+    "status": "inactive",
+    "date_created": "2025-03-01",
+    "name": "Printer",
+    "count": 8,
+    "price":  150000,
+    "category": "electronic"
+  },
+  {
+    "id": 9,
+    "status": "active",
+    "date_created": "2025-03-04",
+    "name": "Scanner",
+    "count": 5,
+    "price":  140000,
+    "category": "electronic"
+  },
+  {
+    "id": 10,
+    "status": "active",
+    "date_created": "2025-03-02",
+    "name": "Speaker",
+    "count": 18,
+    "price":  25000,
+    "category": "electronic"
+  }
+]

@@ -1,15 +1,12 @@
 <script setup lang="ts">
 import {useUserStore} from "~/store/user-store";
+
 const userStore = useUserStore()
 const { isAuthenticated } = storeToRefs(useUserStore()); // make authenticated state reactive with storeToRefs
-console.log(isAuthenticated)
-// Здесь должна быть ваша логика для проверки аутентификации
-// Например, можно использовать Vuex или Pinia для "глобального" состояния.
 const router = useRouter();
 
 const logout = () => {
   userStore.logoutUser()
-  router.push('/login');
 };
 </script>
 

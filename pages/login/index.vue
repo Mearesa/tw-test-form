@@ -1,10 +1,10 @@
 <script setup lang="ts">
-
 import * as v from 'valibot'
 import type {FormSubmitEvent} from '@nuxt/ui'
 import {useUserStore} from "~/store/user-store";
-
-
+definePageMeta({
+  middleware: 'auth'
+})
 const schema = v.object({
   email: v.pipe(v.string(), v.email('Неверная почта')),
   password: v.pipe(v.string(), v.minLength(8, 'Пароль минимум 8 элементов'))
@@ -17,13 +17,19 @@ const state = reactive({
   password: ''
 })
 const userStore = useUserStore()
-const { isAuthenticated } = storeToRefs(useUserStore()); // make authenticated state reactive with storeToRefs
+const {isAuthenticated, isLoading} = storeToRefs(useUserStore()); // make authenticated state reactive with storeToRefs
 const router = useRouter();
+
+const toast = useToast()
 async function onSubmit(event: FormSubmitEvent<Schema>) {
   await userStore.loginUser(state.email, state.password)
-  if (isAuthenticated) {
-    router.push('/profile');
-  }
+      .then(() => {
+        router.push('/profile')
+      })
+      .catch(error => {
+        alert(error)
+        console.log(error)
+      })
 }
 </script>
 
@@ -38,7 +44,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         <UInput v-model="state.password" type="password"/>
       </UFormField>
 
-      <UButton type="submit">
+      <UButton :loading="isLoading" loading-icon="i-lucide-repeat-2" type="submit">
         Войти
       </UButton>
     </UForm>

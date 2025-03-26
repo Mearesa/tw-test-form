@@ -6,12 +6,14 @@ export const useUserStore = defineStore('user', {
     state: () => ({
         isAuthenticated: false,
         user: {},
+        isLoading: false,
     }),
     getters: {
         getIsAuthenticated: (state) => state.isAuthenticated,
     },
     actions: {
         async loginUser(login: string, password: string) {
+            this.isLoading = true
             const authServise = new AuthService()
             await authServise.authenticate(login, password)
                 .then(user => {
@@ -21,14 +23,16 @@ export const useUserStore = defineStore('user', {
                     this.user = user;
                 })
                 .catch(err => {
-                    return err;
+                    throw new Error(err);
                 })
+                .finally(() => this.isLoading = false)
         },
         logoutUser() {
             const cookie_user = useCookie('user');
             this.isAuthenticated = false;
             this.user = {}
             cookie_user.value = null;
+            router.push('/login');
         },
 
 

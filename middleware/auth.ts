@@ -1,13 +1,11 @@
 import {useUserStore} from "~/store/user-store";
 
 export default defineNuxtRouteMiddleware(async (to) => {
-    const { isAuthenticated } = storeToRefs(useUserStore());
+    const {isAuthenticated} = storeToRefs(useUserStore());
     const user = useCookie('user');
-    console.log('user');
-    console.log(user);
-    console.log("isAuthenticated");
-    console.log(isAuthenticated);
-    isAuthenticated.value = !!user;
+    if (user.value) {
+        isAuthenticated.value = true
+    }
     if (user.value && to?.name === 'login') {
         return navigateTo('/');
     }
